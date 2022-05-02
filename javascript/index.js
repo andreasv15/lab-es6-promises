@@ -62,6 +62,8 @@ return obtainInstruction("steak", 1)
 })
 .then((step8) => {
   document.querySelector("#steak").innerHTML += `<li>${step8}</li>`;
+  document.querySelector("#steakImg").removeAttribute("hidden");
+
 })
 .catch((err) => {
   console.log(err)
@@ -93,12 +95,12 @@ async function makeBroccoli() {
     let step7 = await obtainInstruction("broccoli", 6)
     document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
 
+    document.querySelector("#broccoliImg").removeAttribute("hidden");
+
     // let step8 = await obtainInstruction("broccoli", 7)
     // document.querySelector("#broccoli").innerHTML += `<li>${step8}</li>`;
 
   }
-
-
   catch(error) {
     console.log(error)
   }
@@ -109,30 +111,26 @@ makeBroccoli();
 
 
 // Bonus 2 - Promise all
-// ...
+Promise.all(
+  [
+    obtainInstruction("brusselsSprouts", 0),
+    obtainInstruction("brusselsSprouts", 1),
+    obtainInstruction("brusselsSprouts", 2),
+    obtainInstruction("brusselsSprouts", 3),
+    obtainInstruction("brusselsSprouts", 4),
+    obtainInstruction("brusselsSprouts", 5),
+    obtainInstruction("brusselsSprouts", 6),
+    obtainInstruction("brusselsSprouts", 7)
+  ]).then( (step) => {
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[0]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[1]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[2]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[3]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[4]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[5]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[6]}</li>`;
+    document.querySelector("#brusselsSprouts").innerHTML += `<li>${step[7]}</li>`;
+    document.querySelector("#brusselsSproutsImg").removeAttribute("hidden");
+  })
 
 
-
-
-// async function getBooks() {
-  
-//   // try es: Intenta hacer lo que esta dentro del scope
-//   try {
-    
-//     let book1 = await requestBookPromise(0);
-//   //await significa, voy a esperar la resolucion de la promesa antes de continuar
-//   console.log(`leyendo libro ${book1}`)
-  
-//   let book2 = await requestBookPromise(1);
-//   console.log(`leyendo libro ${book2}`)
-    
-//   }
-//   catch(error) {
-//     // si algo fallo en el try, resuelve esto
-//     console.log(error)
-//   }
-  
-  
-// }
-
-// getBooks();
