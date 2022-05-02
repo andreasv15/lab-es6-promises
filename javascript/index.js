@@ -69,9 +69,70 @@ return obtainInstruction("steak", 1)
 
 
 // Iteration 3 using async/await
-// ...
+async function makeBroccoli() {
+  try {
+
+    let step1 = await obtainInstruction("broccoli", 0)
+    document.querySelector("#broccoli").innerHTML += `<li>${step1}</li>`;
+
+    let step2 = await obtainInstruction("broccoli", 1)
+    document.querySelector("#broccoli").innerHTML += `<li>${step2}</li>`;
+
+    let step3 = await obtainInstruction("broccoli", 2)
+    document.querySelector("#broccoli").innerHTML += `<li>${step3}</li>`;
+
+    let step4 = await obtainInstruction("broccoli", 3)
+    document.querySelector("#broccoli").innerHTML += `<li>${step4}</li>`;
+
+    let step5 = await obtainInstruction("broccoli", 4)
+    document.querySelector("#broccoli").innerHTML += `<li>${step5}</li>`;
+
+    let step6 = await obtainInstruction("broccoli", 5)
+    document.querySelector("#broccoli").innerHTML += `<li>${step6}</li>`;
+
+    let step7 = await obtainInstruction("broccoli", 6)
+    document.querySelector("#broccoli").innerHTML += `<li>${step7}</li>`;
+
+    // let step8 = await obtainInstruction("broccoli", 7)
+    // document.querySelector("#broccoli").innerHTML += `<li>${step8}</li>`;
+
+  }
+
+
+  catch(error) {
+    console.log(error)
+  }
+}
+
+makeBroccoli();
 
 
 
 // Bonus 2 - Promise all
 // ...
+
+
+
+
+// async function getBooks() {
+  
+//   // try es: Intenta hacer lo que esta dentro del scope
+//   try {
+    
+//     let book1 = await requestBookPromise(0);
+//   //await significa, voy a esperar la resolucion de la promesa antes de continuar
+//   console.log(`leyendo libro ${book1}`)
+  
+//   let book2 = await requestBookPromise(1);
+//   console.log(`leyendo libro ${book2}`)
+    
+//   }
+//   catch(error) {
+//     // si algo fallo en el try, resuelve esto
+//     console.log(error)
+//   }
+  
+  
+// }
+
+// getBooks();
